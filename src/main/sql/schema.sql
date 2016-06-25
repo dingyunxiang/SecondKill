@@ -20,31 +20,21 @@ CREATE TABLE seckill(
   KEY idx_end_time(end_time),
   KEY idx_create_time(create_time)
 )ENGINE = InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET = utf8 COMMENT='秒杀库存表';
--- 不报错版本
-CREATE TABLE `seckill1` (
-  `seckill_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品库存ID',
-  `name` varchar(120) NOT NULL COMMENT '商品名称',
-  `number` int(11) NOT NULL COMMENT '库存数量',
-  `start_time` timestamp NULL DEFAULT NULL COMMENT '秒杀开始时间',
-  `end_time` timestamp NULL DEFAULT NULL COMMENT '秒杀结束时间',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  PRIMARY KEY (`seckill_id`),
-  KEY `idx_start_time` (`start_time`),
-  KEY `idx_end_time` (`end_time`),
-  KEY `idx_create_time` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='秒杀库存表';
 
 -- 初始化数据
 insert into
   seckill(name,number,start_time,end_time)
 values
-  ('1000元秒杀iphone6',100,'2016-06-20 00:00:00','2016-06-20 00:00:00');
+  ('1000元秒杀iphone6',100,'2016-06-25 00:00:00','2016-06-26 00:00:00'),
+  ('200元秒杀小米5',10,'2016-06-25 00:00:00','2016-06-26 00:00:00'),
+  ('700元秒杀三星',99,'2016-06-25 00:00:00','2016-06-26 00:00:00'),
+  ('瞬间抢票',200,'2016-06-25 00:00:00','2016-06-26 00:00:00');
 
 
 -- 显示如何创建
 # show CREATE table seckill\G
 
-
+# TODO:有关timestamp和datetime的异同
 
 
 -- 秒杀成功明细表
