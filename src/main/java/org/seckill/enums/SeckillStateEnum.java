@@ -1,4 +1,4 @@
-package enums;
+package org.seckill.enums;
 
 /**
  * 使用枚举表示常量数据字段

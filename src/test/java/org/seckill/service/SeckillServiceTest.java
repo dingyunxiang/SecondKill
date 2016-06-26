@@ -20,7 +20,7 @@ import java.util.List;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/spring-dao.xml",
-                        "classpath:spring/spring-service.xml"})
+        "classpath:spring/spring-service.xml"})
 public class SeckillServiceTest {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -30,36 +30,35 @@ public class SeckillServiceTest {
     @Test
     public void testGetSeckillList() throws Exception {
         List<Seckill> list = seckillService.getSeckillList();
-        logger.info("list={}",list);
+        logger.info("list={}", list);
     }
 
     @Test
     public void testGetById() throws Exception {
         Seckill seckill = seckillService.getById(1004L);
-        logger.info("seckill={}",seckill);
-
+        logger.info("seckill={}", seckill);
     }
 
 
-//    测试代码完整逻辑,可以重复执行
+    //    测试代码完整逻辑,可以重复执行
     @Test
     public void testSeckillLogic() throws Exception {
         long id = 1004L;
         Exposer exposer = seckillService.exportSeckillUrl(id);
-        if(exposer.isExposed()){
-            logger.info("exposer={}",exposer);
-            long phone = 13122204541L;
+        if (exposer.isExposed()) {
+            logger.info("exposer={}", exposer);
+            long phone = 13122104541L;
             String md5 = exposer.getMd5();
             try {
                 SeckillExecution execution = seckillService.executeSeckill(id, phone, md5);
                 logger.info("execution:{}", execution);
-            }catch (RepeatKillException re){
+            } catch (RepeatKillException re) {
                 logger.error(re.getMessage());
-            }catch (SeckillCloseException se){
+            } catch (SeckillCloseException se) {
                 logger.error(se.getMessage());
             }
-        }else {
-            logger.warn("exposer={}",exposer);
+        } else {
+            logger.warn("exposer={}", exposer);
         }
 
         /**Exposer{exposed=true,
@@ -79,9 +78,9 @@ public class SeckillServiceTest {
         try {
             SeckillExecution execution = seckillService.executeSeckill(id, phone, md5);
             logger.info("execution:{}", execution);
-        }catch (RepeatKillException re){
+        } catch (RepeatKillException re) {
             logger.error(re.getMessage());
-        }catch (SeckillCloseException se){
+        } catch (SeckillCloseException se) {
             logger.error(se.getMessage());
         }
     }

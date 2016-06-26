@@ -1,7 +1,7 @@
 package org.seckill.dto;
 
-import enums.SeckillStateEnum;
 import org.seckill.entity.SuccessKilled;
+import org.seckill.enums.SeckillStateEnum;
 
 /**
  * 封装秒杀执行后的结果

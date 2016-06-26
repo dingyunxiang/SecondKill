@@ -1,12 +1,12 @@
 package org.seckill.service.impl;
 
-import enums.SeckillStateEnum;
 import org.seckill.dao.SeckillDao;
 import org.seckill.dao.SuccessKilledDao;
 import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.entity.Seckill;
 import org.seckill.entity.SuccessKilled;
+import org.seckill.enums.SeckillStateEnum;
 import org.seckill.exception.RepeatKillException;
 import org.seckill.exception.SeckillCloseException;
 import org.seckill.exception.SeckillException;
@@ -37,7 +37,7 @@ public class SeckillServceImpl implements SeckillService {
     private SuccessKilledDao successKilledDao;
 
     public List<Seckill> getSeckillList() {
-        return seckillDao.queryAll(0, 4);
+        return seckillDao.queryAll(0, 100);
     }
 
     public Seckill getById(long seckillId) {
