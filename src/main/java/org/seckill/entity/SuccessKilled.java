@@ -16,7 +16,6 @@ public class SuccessKilled {
     private Date createTime;
 
 
-
     //变通.
     //多对一,
     private Seckill seckill;

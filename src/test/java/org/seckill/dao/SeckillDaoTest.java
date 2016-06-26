@@ -25,11 +25,10 @@ public class SeckillDaoTest {
     private SeckillDao seckillDao;
 
 
-
     @Test
     public void testReduceNumber() throws Exception {
         Date date = new Date();
-        int count = seckillDao.reduceNumber(1000L,date);
+        int count = seckillDao.reduceNumber(1000L, date);
         System.out.println(count);
     }
 
@@ -50,9 +49,9 @@ public class SeckillDaoTest {
     }
 
     @Test
-    public   void testQueryAll() throws Exception {
-        List<Seckill> list = seckillDao.queryAll(0,100);
-        for(Seckill s:list){
+    public void testQueryAll() throws Exception {
+        List<Seckill> list = seckillDao.queryAll(0, 100);
+        for (Seckill s : list) {
             System.out.println(s);
         }
     }

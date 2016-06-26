@@ -5,12 +5,12 @@
 <mapper namespace="org.seckill.dao.SeckillDao">
     <!--目的:为dao接口方法提供sql语句配置-->
 
-    <update id="reduceNumber" >
+    <update id="reduceNumber">
         <!-- 具体sql -->
         update
-          seckill
+        seckill
         SET
-          number = number - 1
+        number = number - 1
         where seckill_id = #{seckillId}
         and start_time <![CDATA[<=]]> #{killTime}
         and end_time >= #{killTime}
@@ -26,7 +26,7 @@
     </select>
 
 
-    <select id="queryAll" resultType="Seckill" >
+    <select id="queryAll" resultType="Seckill">
         select seckill_id ,name,number,start_time,end_time,create_time
         from seckill
         order by create_time DESC
