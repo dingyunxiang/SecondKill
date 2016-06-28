@@ -108,14 +108,14 @@ var seckill = {
             var killPhone = $.cookie('killPhone');
             //验证手机号
             if (!seckill.validatePhone(killPhone)) {
-                //绑定手机 控制输出
+                //绑定手机控制输出
                 var killPhoneModal = $('#killPhoneModal');
                 killPhoneModal.modal({
                     show: true,//显示弹出层
                     backdrop: 'static',//禁止位置关闭
                     keyboard: false//关闭键盘事件
                 });
-
+                $('.modal-dialog').css('z-index','9999');
                 $('#killPhoneBtn').click(function () {
                     var inputPhone = $('#killPhoneKey').val();
                     console.log("inputPhone: " + inputPhone);
