@@ -17,7 +17,7 @@
         <property name="driverClass" value="${driver}"/>
         <property name="jdbcUrl" value="${url}"/>
         <property name="user" value="root"/>
-        <property name="password" value="pyl951019"/>
+        <property name="password" value="****"/>
 
         <!--c3p0连接池的私有属性-->
         <property name="maxPoolSize" value="100"/>
