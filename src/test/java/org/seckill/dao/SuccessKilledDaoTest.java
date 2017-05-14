@@ -24,7 +24,6 @@ public class SuccessKilledDaoTest {
         System.out.println(count);
     }
 
-    @Test
     public void testQueryByIdWithSeckill() {
         SuccessKilled successKilled = successKilledDao.queryByIdWithSeckill(1005, 18641534278L);
         System.out.println(successKilled);

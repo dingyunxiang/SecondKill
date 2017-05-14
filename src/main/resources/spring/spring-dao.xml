@@ -16,8 +16,8 @@
         <!--配置连接池属性-->
         <property name="driverClass" value="${driver}"/>
         <property name="jdbcUrl" value="${url}"/>
-        <property name="user" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="user" value="root"/>
+        <property name="password" value="pyl951019"/>
 
         <!--c3p0连接池的私有属性-->
         <property name="maxPoolSize" value="100"/>
